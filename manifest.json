@@ -1,0 +1,27 @@
+{
+  "name":"Pause Pro",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Pause All Tabs of Youtube",
+  "permissions": [
+        "activeTab",
+        "tabs",
+        "notifications",
+        "http://*/*",
+        "https://*/*"
+],
+"icons": { "16": "Icons/icon16.png",
+           "48": "Icons/icon48.png",
+          "128": "Icons/icon128.png" },
+"background": {
+  "scripts": ["background.js"],
+  "persistent": false
+},
+"content_scripts":[{
+  "matches": ["<all_urls>"],
+  "js": ["pause.js"],
+  "all_frames": true
+}],
+"browser_action": {}
+
+}
